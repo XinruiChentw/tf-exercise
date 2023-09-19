@@ -10,10 +10,29 @@ locals {
 }
 
 #--------VPC-----------#
-variable "vpc_name" { default = "xr-vpc" }
-variable "vpc_cidr_block" { default = "10.0.0.0/16" }
-variable "vpc_availability_zones" { default = ["ap-east-1a", "ap-east-1b"] }
-variable "vpc_public_subnets" { default = ["10.0.101.0/24", "10.0.102.0/24"] }
-variable "vpc_private_subnets" { default = ["10.0.1.0/24", "10.0.2.0/24"] }
-variable "vpc_enable_nat_gateway" { default = true }
-variable "vpc_single_nat_gateway" { default = true }
+variable "vpc" {
+  description = "vpc variables"
+  type = object({
+    vpc_name               = string
+    vpc_cidr_block         = string
+    vpc_availability_zones = list(string)
+    vpc_public_subnets     = list(string)
+    vpc_private_subnets    = list(string)
+    vpc_enable_nat_gateway = bool
+    vpc_single_nat_gateway = bool
+  })
+}
+
+
+#---------EKS----------#
+variable "eks" {
+  description = ""
+  type = object({
+    cluster_name                   = string
+    cluster_version                = string
+    cluster_endpoint_public_access = bool
+    aws_auth_roles = list(object({
+      rolearn  = string
+    }))
+  })
+}
