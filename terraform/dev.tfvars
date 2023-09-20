@@ -12,9 +12,5 @@ eks = {
   cluster_name = "xr-test"
   cluster_version                = "1.27"
   cluster_endpoint_public_access = true
-  aws_auth_roles = [
-    {
-      rolearn = "arn:aws:iam::494526681395:role/xr-eks-cluster-role"
-    }
-  ]
 }
+lb_sa_name = "aws-load-balancer-controller"

@@ -34,6 +34,5 @@ module "eks" {
       selectors = [{ namespace = "kube-system" }]
     }
   }
-  aws_auth_roles = var.eks.aws_auth_roles
   tags = local.common_tags
 }

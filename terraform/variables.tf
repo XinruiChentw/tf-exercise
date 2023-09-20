@@ -23,7 +23,6 @@ variable "vpc" {
   })
 }
 
-
 #---------EKS----------#
 variable "eks" {
   description = ""
@@ -31,8 +30,7 @@ variable "eks" {
     cluster_name                   = string
     cluster_version                = string
     cluster_endpoint_public_access = bool
-    aws_auth_roles = list(object({
-      rolearn  = string
-    }))
   })
 }
+
+variable "lb_sa_name" {}
