@@ -34,3 +34,4 @@ variable "eks" {
 }
 
 variable "lb_sa_name" {}
+variable "lb_target_group_arn" {}

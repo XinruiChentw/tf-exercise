@@ -14,3 +14,4 @@ eks = {
   cluster_endpoint_public_access = true
 }
 lb_sa_name = "aws-load-balancer-controller"
+lb_target_group_arn = "arn:aws:elasticloadbalancing:ap-east-1:494526681395:targetgroup/k8s-default-simpleng-d8711fe116/da01a3de8736a15d"

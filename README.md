@@ -1,5 +1,5 @@
 # tf-exercise
 
-url: http://xr-test.toc-platform.com/
+url: https://xr-test.toc-platform.com/
 
 how to deploy: run "deploy" script
